@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'home.apps.HomeConfig'
+    'home.apps.HomeConfig',
+    'django_celery_beat'
 ]
 
 MIDDLEWARE = [
@@ -69,6 +70,16 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'config.wsgi.application'
+
+
+# Email backend setting
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'django.mapsabootcamp@gmail.com'
+EMAIL_HOST_PASSWORD = 'nudcas-8suczu-ripByq'
+EMAIL_PORT = 587
+
 
 
 # Database
@@ -123,3 +134,5 @@ STATIC_URL = '/static/'
 # CELERY
 CELERY_BROKER_URL = "amqp://guest:guest@localhost"
 CELERY_RESULT_BACKEND = 'rpc://'  # RPC
+
+
